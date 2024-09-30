@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Adicionar Veículo</h1>
+<form method="POST">
+    <label for="placa">Placa do Veículo:</label>
+    <input type="text" id="placa" name="placa" required>
+    <button type="submit">Adicionar</button>
+</form>
+{% if error %}
+<p class="error">{{ error }}</p>
+{% endif %}
+{% endblock %}

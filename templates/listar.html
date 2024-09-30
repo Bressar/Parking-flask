@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Veículos Estacionados</h1>
+{% if veiculos %}
+<ul>
+    {% for veiculo in veiculos %}
+    <li>{{ veiculo }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>Não há veículos estacionados.</p>
+{% endif %}
+{% endblock %}

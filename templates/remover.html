@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Remover Veículo</h1>
+<form method="POST">
+    <label for="placa">Placa do Veículo:</label>
+    <input type="text" id="placa" name="placa" required>
+    <label for="preco_inicial">Preço Inicial:</label>
+    <input type="number" id="preco_inicial" name="preco_inicial" step="0.01" required>
+    <label for="preco_hora">Preço por Hora:</label>
+    <input type="number" id="preco_hora" name="preco_hora" step="0.01" required>
+    <label for="horas">Horas Estacionado:</label>
+    <input type="number" id="horas" name="horas" required>
+    <button type="submit">Remover</button>
+</form>
+{% if error %}
+<p class="error">{{ error }}</p>
+{% endif %}
+{% if total %}
+<p>Veículo de placa {{ placa }} removido. Total a pagar: R$ {{ total }}</p>
+{% endif %}
+{% endblock %}

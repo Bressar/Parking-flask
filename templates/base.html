@@ -1,0 +1,30 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Estacionamento</title>
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap_litera.css')}}">
+
+
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; }
+        .container { max-width: 800px; margin: auto; padding: 20px; }
+        nav { background: #f4f4f4; padding: 10px; }
+        nav a { margin-right: 10px; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="{{ url_for('index') }}">Início</a>
+            <a href="{{ url_for('adicionar_veiculo') }}">Adicionar Veículo</a>
+            <a href="{{ url_for('remover_veiculo') }}">Remover Veículo</a>
+            <a href="{{ url_for('listar_veiculos') }}">Listar Veículos</a>
+        </nav>
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
